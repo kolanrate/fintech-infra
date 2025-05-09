@@ -84,7 +84,7 @@ resource "aws_iam_role_policy_attachment" "eks_client_eks_access_attach" {
 
 # Create an instance profile for the EC2 instance to use the IAM Role
 resource "aws_iam_instance_profile" "eks_client_ssm_profile" {
-  name = "eks-client-ssm-profile"
+  name = "eks-client-ssm-profile2"
   role = aws_iam_role.eks_client_ssm_role.name
 }
 
