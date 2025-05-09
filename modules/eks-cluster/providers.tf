@@ -3,6 +3,10 @@ provider "aws" {
   region  = "us-east-2"
 }
 
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 # data "aws_eks_cluster" "this" {
 #   name = var.cluster_name
 # }

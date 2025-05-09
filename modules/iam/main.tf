@@ -4,7 +4,7 @@ provider "aws" {
 
 # IAM Role for GitHub Actions
 resource "aws_iam_role" "github_actions_role" {
-  name = "${var.environment}-GitHubActionsxECR"
+  name = "${var.environment}-GitHubActionsECR"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -30,7 +30,7 @@ resource "aws_iam_role" "github_actions_role" {
 
 # Use this Terraform configuration to create the GitHub Actions OIDC provider in AWS
 resource "aws_iam_openid_connect_provider" "github_oidc" {
-  url = "https://token.actions.githuboidccontent.com"
+  url = "https://token.actions.githubusercontent.com"
 
   client_id_list = [
     "sts.amazonaws.com"
@@ -43,7 +43,7 @@ resource "aws_iam_openid_connect_provider" "github_oidc" {
 
 # Attach ECR permissions to IAM Role
 resource "aws_iam_policy" "github_ecr_policy" {
-  name        = "${var.environment}-GitHubECRPoliccy"
+  name        = "${var.environment}-GitHubECRPolicy"
   description = "Permissions for GitHub Actions to push/pull from ECR"
 
   policy = jsonencode({
@@ -90,7 +90,7 @@ resource "aws_iam_policy" "github_ecr_policy" {
 
 # Attach EKS permissions to IAM Role
 resource "aws_iam_policy" "github_eks_policy" {
-  name        = "${var.environment}-GitHubEKSPoliccy"
+  name        = "${var.environment}-GitHubEKSPolicy"
   description = "Permissions for GitHub Actions to deploy to EKS"
   policy      = jsonencode({
     Version = "2012-10-17"
