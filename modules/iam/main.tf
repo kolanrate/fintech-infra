@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 # IAM Role for GitHub Actions
 resource "aws_iam_role" "github_actions_role" {
-  name = "${var.environment}-GitHubActionsECR"
+  name = "${var.environment}-GitHubActionsxECR"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -90,7 +90,7 @@ resource "aws_iam_policy" "github_ecr_policy" {
 
 # Attach EKS permissions to IAM Role
 resource "aws_iam_policy" "github_eks_policy" {
-  name        = "${var.environment}-GitHubEKSPolicy"
+  name        = "${var.environment}-GitHubEKSPoliccy"
   description = "Permissions for GitHub Actions to deploy to EKS"
   policy      = jsonencode({
     Version = "2012-10-17"

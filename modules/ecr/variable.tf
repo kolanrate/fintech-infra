@@ -1,12 +1,12 @@
 variable "aws_account_id" {
   description = "AWS Account ID"
-  default     = "999568710647"
+  default     = "831926583884"
 }
 
 variable "repositories" {
   description = "List of ECR repositories to create"
   type        = list(string)
-  default     = ["payload-app"]
+  default     = ["fintech-app"]
 }
 
 variable "tags" {

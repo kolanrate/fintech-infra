@@ -30,7 +30,7 @@ locals {
 # IAM Role for EKS Client Node
 #############################
 resource "aws_iam_role" "eks_client_ssm_role" {
-  name = "eks-client-ssm-role"
+  name = "eks-client-ssm-role2"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
