@@ -30,7 +30,7 @@ locals {
 # IAM Role for EKS Client Node
 #############################
 resource "aws_iam_role" "eks_client_ssm_role" {
-  name = "eks-client-ssm-role3"
+  name = "eks-client-ssm-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
@@ -84,7 +84,7 @@ resource "aws_iam_role_policy_attachment" "eks_client_role_attachment" {
 
 # Create an instance profile for the EC2 instance to use the IAM Role
 resource "aws_iam_instance_profile" "eks_client_ssm_profile" {
-  name = "eks-client-ssm-profile3"
+  name = "eks-client-ssm-profile"
   role = aws_iam_role.eks_client_ssm_role.name
 }
 
