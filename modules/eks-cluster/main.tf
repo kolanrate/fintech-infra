@@ -78,19 +78,19 @@ module "eks" {
 }
 
 #creating namespaces
-resource "kubernetes_namespace" "gateway" {
-  metadata {
-    annotations = {
-      name = "gateway"
-    }
+#resource "kubernetes_namespace" "gateway" {
+  #metadata {
+    #annotations = {
+      #name = "gateway"
+    #}
 
-    labels = {
-      app = "webapp"
-    }
+    #labels = {
+      #app = "webapp"
+    #}
 
-    name = "gateway"
-  }
-}
+    #name = "gateway"
+  #}
+#}
 
 
 # resource "kubernetes_namespace" "directory" {
