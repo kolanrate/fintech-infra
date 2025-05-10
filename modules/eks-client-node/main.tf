@@ -77,7 +77,7 @@ resource "aws_iam_policy" "eks_client_eks_access" {
 }
 
 # Attach policy to IAM role
-resource "aws_iam_role_policy_attachment" "eks_client_role_attachment" {
+resource "aws_iam_role_policy_attachment" "eks_client_eks_access_attach" {
   role       = aws_iam_role.eks_client_ssm_role.name
   policy_arn = aws_iam_policy.eks_client_eks_access.arn
 }
